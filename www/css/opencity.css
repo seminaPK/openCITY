@@ -1,0 +1,236 @@
+@import url(http://fonts.googleapis.com/css?family=Nunito:300);
+
+/* Responsive CSS
+@media (min-width: 1200px) { // Large desktop
+    
+}
+ 
+@media (min-width: 768px) and (max-width: 979px) {     // Portrait tablet to landscape and desktop
+
+}
+ 
+@media (max-width: 767px) { // Landscape phone to portrait tablet
+
+
+}
+ 
+@media (max-width: 480px) { // Landscape phones and down 
+
+
+}
+
+*/
+
+html, body {
+    font-family: 'Nunito', sans-serif;
+}
+
+#map {
+	padding: 0;
+    margin: 0;
+	width: 100%;
+    height: 480px;
+}
+
+#category4sq {
+	font-size: 18px;
+}
+
+.timetable {
+	font-size: 20px;
+	font-weight: 400
+}
+
+.timetable a {
+	color: #66ccff;
+}
+
+.marker {
+	font-size: 10px;
+	font-weight: 400;
+	font-family: 'Nunito', sans-serif;
+}
+
+.highlight {
+	font-size: 36px;
+	font-weight: 700;
+	color: #222;
+}
+
+.my-container { 
+	width: 100%; 
+	float:left; 
+	width:100%;
+	padding:0;
+	margin:50px 0 0 0;
+}
+
+.full-panel {
+	background-attachment: fixed;
+	background-position: 50% 0;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: relative;
+}
+
+.header {	
+	/* background-color: #66ccff; */
+	color: #66ccff;
+	text-align: center;
+	font-size: 28px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 900;
+}
+
+.in-panel { 
+	position: relative;
+	/* width:970px; */
+	width:100%;
+	margin: 0 auto;
+	min-height: 600px;
+	padding-top:50px
+}
+
+.in-panel-header {
+	height: 90px;
+	position: relative;	
+	width:100%;
+	margin: 0 auto;
+	padding-top:50px;
+	background-color: #66ccff;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 900;
+	color: #fff; 
+	font-size: 30px; 
+	background: #fd4c5b;
+	padding:10px 20px; 
+	text-transform: uppercase;
+	float:left;
+	margin-bottom: 20px
+}
+
+.in-panel .responsive-image {
+    height:auto;
+    width:100%;
+}
+
+.in-panel .routing {
+    padding: 15px 15px 15px 15px;
+    margin: 15px 15px 15px 15px;
+}
+
+.in-panel-footer {
+	height: 90px;
+	position: relative;	
+	width:100%;
+	margin: 0 auto;
+	padding-top:50px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	color: #000; 
+	font-size: 24px; 
+	background: #FFF;
+	padding:10px 20px; 
+	float:left;
+	margin-bottom: 20px
+}
+
+.in-panel-footer p {
+	font-size: 16px;
+	margin-bottom:5px;
+	clear:both;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+}
+
+.in-panel-footer h2 {
+	color: #fff; 
+	font-size: 23px; 
+	background: #fd4c5b;
+	padding:10px 20px; 
+	text-transform: uppercase;
+	float:left;
+	margin-bottom: 10px
+}
+
+.in-panel-footer h3 {
+	color: #fff; 
+	font-size: 14px; 
+	background: #fd4c5b;
+	padding:5px 5px; 
+	text-transform: uppercase;
+	float:left;
+	margin-bottom: 5px
+}
+
+.in-panel-footer h4 {
+	padding:10px 10px; 
+	float:left;
+	margin-bottom: 20px
+}
+
+.tip {
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px; 
+	font-weight: 200;
+}
+
+.tip h4 {
+	font-family: 'Nunito', sans-serif;
+	font-size: 12px; 
+	font-weight: 200;
+}
+
+.thumb {
+	width: 64px;
+	height: 64px;
+}
+
+.in-panel h1 {
+	color: #fff; 
+	font-size: 36px; 
+	background: #fd4c5b;
+	padding:10px 20px; 
+	text-transform: uppercase;
+	float:left;
+	margin-bottom: 20px
+}
+
+.in-panel h2 {
+	color: #fff; 
+	font-size: 30px; 
+	background: #fd4c5b;
+	padding:10px 20px; 
+	text-transform: uppercase;
+	float:left;
+	margin-bottom: 20px
+}
+
+.in-panel p {
+	font-size: 20px;
+	margin-bottom:40px;
+	clear:both;
+}
+
+.image-one {
+	background-image: url(images/background/1.jpg);
+}
+
+.image-two {
+	background-image: url(images/background/2.jpg);
+}
+
+.image-three {
+	background-image: url(images/background/3.jpg);
+}
+
+.image-four {
+	background-image: url(images/background/4.jpg);
+}
+
+.image-five {
+	background-image: url(images/background/5.jpg);
+}

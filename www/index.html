@@ -1,44 +1,359 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-    http://www.apache.org/licenses/LICENSE-2.0
+    <title>OpenCITY</title>
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="css/opencity.css" />
+    <link rel="stylesheet" type="text/css" href="css/spinner.css" />
+      
+    <link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="css/leaflet.usermarker.css" />
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target="#my-navbar">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">/openCITY</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#about">About</a></li>
+            <li><a href="#map">Map</a></li>
+            <li><a href="#catchthebus">Catch the Bus</a></li>
+            <li><a href="#where">Go2</a></li>
+            <li><a href="#address">GoAddress</a></li>
+            <li><a href="#bikesharing">Bike Sharing</a></li>  
+            <li><a href="#contact">Get in touch</a></li>
+            <!--
+            <li><a href="#joinus">SignIN</a></li>
+            -->
+          </ul>
+          <!--
+          <form class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+          -->
+        </div><!--/.nav-collapse -->
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+    <div class="my-container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 full-panel image-one" data-stellar-background-ratio="0.5">
+          <div class="in-panel" id="about">
+            <center>
+            <p>
+              <img src="images/logo.png" class="responsive-image" />
+            </p>
+            
+            <p><a class="btn btn-primary btn-lg" role="button" href="#bus_stations">Hello Bari, Let's Go!! &raquo;</a></p>
+            </center>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 full-panel" id="map_title" data-stellar-background-ratio="0.5">
+          <div class="in-panel-header">
+            <h2 id="map_name">#catchthebus</h2>
+          </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-12 full-panel" data-stellar-background-ratio="0.5">
+          <div class="in-panel" id="map"></div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-12 full-panel image-two" data-stellar-background-ratio="0.5">
+            <div class="in-panel">
+              <h2>Vuoi sapere come raggiungere qualsiasi punto di Bari senza la tua auto? </h2>
+              <h2>Allora #catchthebus, rispetta l'ambiente, comincia a risparmiare i tuoi soldi, prendi il bus.</h2>
+            <p>
+              <a class="twitter-share-button" href="https://twitter.com/share"
+                data-via="gzileni"
+                data-size="large"
+                data-count="orizontal"
+                data-text="Vuoi raggiungere qualsiasi punto di Bari senza la tua auto?"
+                data-url="http://opencity.gzileni.name"
+                data-hashtags="opencity, catchthebus">
+              Tweet
+              </a>
+              <script type="text/javascript">
+                window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+              </script>
+            </p>
             </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+
+        <div class="col-xs-12 col-sm-12 full-panel" data-stellar-background-ratio="0.5" id="catchthebus">
+            <div class="in-panel">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                  <h2 class="header" id="bus_stations_name"></h2> 
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                  <div id="bus_stations"></div> 
+                </div>
+              </div> 
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 full-panel image-three" data-stellar-background-ratio="0.5">
+            <div class="in-panel">
+              <h2>Scopri i luoghi più interessanti della città di Bari.</h2>
+              <h2>Caffè, Shopping, Arte, Parchi, lascia a casa l'auto, #catchthebus.</h2>
+              <p>
+              <a class="twitter-share-button" href="https://twitter.com/share"
+                data-via="gzileni"
+                data-size="large"
+                data-count="orizontal"
+                data-text="Scopri i luoghi più interessanti della città, lascia a casa l'auto."
+                data-url="http://opencity.gzileni.name"
+                data-hashtags="opencity, catchthebus">
+              Tweet
+              </a>
+              <script type="text/javascript">
+                window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+              </script>
+            </p>
+            </div>
+        </div>
+          
+        <div class="col-xs-12 col-sm-12 full-panel" data-stellar-background-ratio="0.5" id="where">
+            <!-- options per scegliere la categoria dei luoghi -->
+            <div class="in-panel">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                  <h2 class="header" id="foursquare_search"></h2>
+                  <img src="images/poweredByFoursquare_gray_small.png" /> 
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                  <center>
+                  <ul class="nav nav-pills" id="category4sq">
+                    <li><a href="#" data-section="topPicks">#top</a></li>
+                    <li><a href="#foursquare_venues" data-section="arts">#arts</a></li>
+                    <li><a href="#foursquare_venues" data-section="drinks">#drinks</a></li>
+                    <li><a href="#foursquare_venues" data-section="coffee">#coffee</a></li>
+                    <li><a href="#foursquare_venues" data-section="shops">#shopping</a></li>
+                    <li><a href="#foursquare_venues" data-section="outdoors">#outdoors</a></li>
+                    <!--
+                    <li><a href="#" data-section="sights">Panorami</a></li>
+                    <li><a href="#" data-section="trending">Tendenza</a></li>
+                    <li><a href="#" data-section="specials">Speciali</a></li>
+                    <li><a href="#" data-section="nextVenues">Maggiormente frequentati</a></li>
+                    -->
+                  </ul>
+                  
+                  </center>
+                </div>
+              </div>
+              <div id="foursquare_venues"></div>
+            </div>              
+        </div>
+          
+          <div class="col-xs-12 col-sm-12 full-panel image-four" data-stellar-background-ratio="0.5" id="address">
+                <div class="in-panel">
+                    <h1>Vuoi sapere come raggiungere qualsiasi luogo di Bari?</h1>
+                    <h2>Scopri quale linea di bus prendere per spostarsi da posto ad un altro della tua città.</h2>
+                </div>
+          </div>
+          
+          <div class="col-xs-12 col-sm-12 full-panel" data-stellar-background-ratio="0.5">
+                <div class="in-panel">
+                    <div class="row">
+                      <div class="col-lg-12 routing">
+                        <div class="input-group input-group-lg">
+                          <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-map-marker"></span>
+                            </span>
+                          <input type="text" class="form-control" id="search_start" 
+                                 placeholder="Inserisci il luogo di partenza, vuoto se vuoi partire dalla tua posizione">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 routing">
+                        <div class="input-group input-group-lg">
+                          <input type="text" class="form-control" id="search_end" 
+                                 placeholder="Inserisci il luogo di destinazione, es. Teatro Petruzzelli">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search" id="search_address"></span>
+                              </button>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="label label-danger" id="error_address"></span>
+                    <h2>Lascia a casa l'auto prendi il bus #catchthebus</h2>
+                    <p>
+                    <ul class="list-group" id="address_route"></ul>
+                    </p>
+                </div>
+          </div>
+          
+          <div class="col-xs-12 col-sm-12 full-panel image-five" data-stellar-background-ratio="0.5" id="bikesharing">
+                <div class="in-panel">
+                    <h1><a href="http://www.comune.bari.it/portal/page/portal/bari/temiBari/Trasportieviabilita/muoversiABari/bikeSharing" target="_blank">Bike sharing</a></h1>
+                    <h2>la bicicletta, un mezzo ecologico, efficiente e veloce più di auto e bus e nel traffico, e senza problemi di parcheggio</h2>
+                    
+                </div>
+          </div>
+          
+          <div class="col-xs-12 col-sm-12 full-panel" data-stellar-background-ratio="0.5">
+                <div class="in-panel">
+                    <ul class="list-group" id="bike_sharing"></ul>
+                </div>
+          </div>
+         
+        <!--
+        <div class="col-xs-12 col-sm-12 full-panel image-three" data-stellar-background-ratio="0.5">
+          <div class="in-panel" id="joinus">
+
+          </div>
+        </div>
+        -->
+
+        <div class="col-xs-12 col-sm-12 full-panel" data-stellar-background-ratio="0.5" id="contact">
+          <div class="in-panel-footer">
+              <div class="row">
+                <div class="col-md-6">
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Get in touch!</h2>
+                            <p>
+                            <a href="https://twitter.com/gzileni" 
+                               class="twitter-follow-button" 
+                               data-size="small" data-show-count="horizontal"> 
+                                Follow @gzileni
+                                </a> 
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Any questions?</h3>
+                            <h4>
+                            <a href="mailto:me@gzileni.name" target="_blank"> 
+                                <img src="images/social/mail.png" />
+                            </a> 
+                            <a href="https://gitter.im/giuseppezileni/openCITY?utm_source=share-link&utm_medium=link&utm_campaign=share-link" target="_blank"> 
+                                <img src="images/social/gitter_small.png" />
+                            </a>        
+                            <a href="https://github.com/giuseppezileni/openCITY" target="_blank">
+                                <img src="images/social/github.png" />
+                            </a>
+                            <a href="https://trello.com/b/uy1M1M2i" target="_blank">
+                                <img src="images/social/trello.png" />
+                            </a>
+                            <a href="https://www.facebook.com/opencitygz" target="_blank">
+                                <img src="images/social/facebook.png" />
+                            </a>
+                            </h4>
+                        </div>
+                    </div>
+                    
+                <script type="text/javascript">
+                  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+                </script>
+                        </p>
+                </div>
+                  
+                <div class="col-md-6">
+                    <p>
+              <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">openCITY</span> di<a xmlns:cc="http://creativecommons.org/ns#" href="http://obb.gzileni.name" property="cc:attributionName" rel="cc:attributionURL"> Giuseppe Zileni</a> è distribuito con Licenza <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribuzione 4.0 Internazionale</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://www.gzileni.name" rel="dct:source">http://www.gzileni.name</a>.<br />Permessi ulteriori rispetto alle finalità della presente licenza possono essere disponibili presso <a xmlns:cc="http://creativecommons.org/ns#" href="http://dati.comune.bari.it/portal/page/portal/baridati/novitaPortale/lineeGuida" rel="cc:morePermissions">http://dati.comune.bari.it/portal/page/portal/baridati/novitaPortale/lineeGuida</a>.<br/>
+                        
+              </p>
+                </div>
+              </div>
+          </div>
+        </div>
+
+    </div><!-- /.my-container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!--
+    <script src="js/jquery.mobile-1.4.4.min.js"></script>
+    -->
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/leaflet.usermarker.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/opencity/opencity.config.js"></script>
+    <script src="js/opencity/opencity.rest.js"></script>
+    <script src="js/opencity/opencity.js"></script>
+    <script src="js/opencity/opencity.foursquare.js"></script>
+    <script src="js/opencity/opendata.bari.js"></script>  
+    <script src="js/opencity/opencity.mapquest.js"></script>   
+    <script src="js/opencity/opencity.twitter.js"></script>
+
+    <script src="js/moment/moment.js"></script>
+    <script src="js/moment/moment-timezone-with-data.js"></script>
+    <script src="js/moment/moment-with-locales.js"></script>
+    
+    <script src="js/underscore/underscore-min.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-9970885-16', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+  </body>
 </html>
